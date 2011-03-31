@@ -8,11 +8,11 @@ Copyright (C) 2011 Vladimir Shugaev
 Class executes simple mathematical calculations with expression in infix notation
 Curently allows simple algebraic binary operations:
 
-* + (addition)
-* - (substraction)
-* * (multiplication)
-* / (division)
-* ^ (exponential)
+* addition (+)
+* substraction (-)
+* multiplication (*)
+* division (/)
+* exponential (^)
 
 It also allows to use braces and watchs for priority of operations
 
