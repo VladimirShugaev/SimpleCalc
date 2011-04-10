@@ -33,6 +33,19 @@ $testExpressions=array(
 );
 include "class.SimpleCalc.php";
 $calc=new SimpleCalc();
+
+$consts=array(
+	'G'=>6.6742*pow(10,-11)
+);
+$vars=array(
+	'R'=>6.371*pow (10,6), //meters (mass of Earth)
+	'M'=>5.9736*pow (10,24) //kilograms (radius of Earth)
+);
+$formula='G*M/R^2'; //gravity force of object with mass M kg on distance R from its center
+
+$toCalc=str_replace(array_keys($consts),array_values($consts),$formula);
+$toCalc=str_replace(array_keys($vars),array_values($vars),$toCalc);
+$testExpressions[$toCalc]=6.6742E-11*5.9736E+24/pow(6371000,2);
 ?>
 <table>
 	<thead>

@@ -88,6 +88,8 @@ class SimpleCalc{
 			switch ($state){
 				case 0:
 					if (array_search($char, $operators)!==false){
+						if (($char=='+'||$char=='-')&&($expression{$position-1}=='E')) //ignore + and - in exponential like 6.6742E-11
+							continue;
 						$operatorsPositions[$position]=$this->priority[$char];
 					}
 					if ($char =='('){
